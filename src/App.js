@@ -5,7 +5,6 @@ import AddNote from "./components/AddNote";
 import {
   BrowserRouter as Router,
   Route,
-  // Redirect,
   Switch,
 } from "react-router-dom";
 import './App.css';

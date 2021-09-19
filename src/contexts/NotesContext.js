@@ -17,6 +17,7 @@ export const NotesProvider = (props) => {
 
 
     const fetchNotes = async () => {   
+        // PULL FROM GRAPHQL SERVER
         setLoading(true);         
         try {
         await axios({
@@ -36,6 +37,19 @@ export const NotesProvider = (props) => {
                 if (result.status !== 200) {
                     throw result;
                 }
+
+                // ADD FAKER DATA TO NOTES
+                const faker = require("faker");
+                const { v4:uuidv4 } = require('uuid');
+                const fakerData = [];
+                for (let i = 0; i < 10; i += 1) {
+                    fakerData.push({
+                    id: uuidv4(),
+                    title: faker.lorem.words(4),
+                    text: faker.lorem.paragraph(),
+                    });
+                }
+                setNotes(currentNotes => [...currentNotes, ...fakerData]);
             });
         } catch (err) {
             setError(err.message || err.statusText);

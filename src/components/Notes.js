@@ -27,10 +27,13 @@ function Notes() {
       {error && <p>{error}</p>}
 
       {notes?.length ? (
-        <ul className="notes-index">
+        <div className="notes-index">
           {notes.map(({_id, title, text}) => (
-            <li key={_id}>{title}</li>
-            ))} </ul>
+            <div key={_id} className="note-thumbnail">
+              <div className="note-title">{title}</div>
+              <div className="note-content">{text}</div>
+            </div>
+            ))} </div>
         ) : <p>no notes</p>}
     </Layout>
   );
