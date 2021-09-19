@@ -1,24 +1,26 @@
-import logo from './logo.svg';
+import React from "react";
+import { NotesProvider } from "./contexts/NotesContext";
+import Notes from "./components/Notes";
+import AddNote from "./components/AddNote";
+import {
+  BrowserRouter as Router,
+  Route,
+  // Redirect,
+  Switch,
+} from "react-router-dom";
 import './App.css';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <NotesProvider>
+        <Switch>
+          <Route exact path="/" component={Notes}></Route>
+          <Route exact path="/notes/add" component={AddNote}></Route>
+        </Switch>
+      </NotesProvider>
+    </Router>
   );
 }
 
