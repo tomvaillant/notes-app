@@ -59,6 +59,27 @@ export const NotesProvider = (props) => {
         }
     }
 
+    // const addNote = async (formData) {
+    //     try {
+    //         await axios({
+    //             url: 'https://api-eu-central-1.graphcms.com/v2/cktqzdof029d801yzbpid55uw/master',
+    //             method: 'post',
+    //             data: {
+    //                     query: `mutation AddNote {
+    //                         __typename
+    //                         createNote(data: $data) {
+    //                           id
+    //                           title
+    //                           text
+    //                         }
+    //                       }`
+    //                 },
+    //             }).then(res => console.log(res))
+    //             .catch(err => console.log(err))
+                    
+    //     }
+    // }
+
     return (
         <NotesContext.Provider
           value={{

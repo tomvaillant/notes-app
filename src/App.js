@@ -1,7 +1,7 @@
 import React from "react";
 import { NotesProvider } from "./contexts/NotesContext";
 import Notes from "./components/Notes";
-import AddNote from "./components/AddNote";
+import AddNote from "./components/AddNote/AddNote";
 import {
   BrowserRouter as Router,
   Route,
