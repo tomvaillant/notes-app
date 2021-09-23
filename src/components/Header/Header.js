@@ -2,7 +2,8 @@ import React from 'react';
 import {
  NavLink
 } from "react-router-dom";
-import './Notes.css';
+import '../NotesList/NotesList';
+import '../NotesList/Notes.css'
 
 function Header() {
     return (

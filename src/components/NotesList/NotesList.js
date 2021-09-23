@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { NotesContext } from "../contexts/NotesContext";
-import Layout  from '../layouts/Layout';
+import Layout  from '../../layouts/Layout';
 import "./Notes.css";
 
 function Notes() {
